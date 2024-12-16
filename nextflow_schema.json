@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com//master/nextflow_schema.json",
+    "title": " pipeline parameters",
+    "description": "",
+    "type": "object",
+    "$defs": {
+        "input_options": {
+            "title": "Input options",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "properties": {
+                "yamls": {
+                    "type": "string",
+                    "description": "Glob path to seqerakit YAML files"
+                },
+                "targets": {
+                    "type": "string",
+                    "default": "launch",
+                    "description": "Which seqerakit target to use.",
+                    "help_text": "Comma separated list of targets to run. See [seqerakit documentation](https://github.com/seqeralabs/seqera-kit?tab=readme-ov-file#specify-targets) for more details."
+                },
+                "endpoint": {
+                    "type": "string",
+                    "default": "https://api.cloud.seqera.io",
+                    "description": "Seqera Platform API endpoint. Set to your version of Seqera Platform."
+                }
+            },
+            "required": [
+                "yamls"
+            ]
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/$defs/input_options"
+        }
+    ]
+}

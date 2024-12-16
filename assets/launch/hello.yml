@@ -1,0 +1,13 @@
+launch:
+  - name: "hello-aws-$TIME"
+    workspace: "$ORGANIZATION_NAME/$AWS_WORKSPACE_NAME"
+    pipeline: "hello-aws"
+  - name: "hello-azure-$TIME"
+    workspace: "$ORGANIZATION_NAME/$AZURE_WORKSPACE_NAME"
+    pipeline: "hello-azure"
+  - name: "hello-gcp-$TIME"
+    workspace: "$ORGANIZATION_NAME/$GCP_WORKSPACE_NAME"
+    pipeline: "hello-gcp"
+  - name: "hello-slurm-$TIME"
+    workspace: "$ORGANIZATION_NAME/$SLURM_WORKSPACE_NAME"
+    pipeline: "hello-slurm"
